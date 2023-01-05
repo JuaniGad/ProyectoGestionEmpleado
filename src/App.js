@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "./components/NavBar";
 import Info from "./components/Info";
 import styles from "./style";
+import Clientes from "./components/Clientes";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
 
       <div className={`bg-black ${styles.paddingX} ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
+          <Clientes/>
           CLIENTES CONTACTO PREGUNTAS FRECUENTES ENLACES FOOTER
         </div>
       </div>
