@@ -35,7 +35,7 @@ export const opiniones = [
     id: "feedback-1",
     content:
       "Excelente aplicacion, verdaderamente te soluciona muchos problemas habituales",
-    name: "Nicolas Thompson",
+    name: "Carol Grinh",
     title: "RR.HH en Avantrip",
     img: people01,
   },

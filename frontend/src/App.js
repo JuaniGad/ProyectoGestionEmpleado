@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import Info from "./components/Info";
 import styles from "./style";
 import Clientes from "./components/Clientes";
+import Enlaces from "./components/Enlaces";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <div className={`bg-black ${styles.paddingX} ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
           <Clientes/>
+          <Enlaces/>
           CLIENTES CONTACTO PREGUNTAS FRECUENTES ENLACES FOOTER
         </div>
       </div>
