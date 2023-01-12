@@ -8,6 +8,7 @@ export default function Clientes() {
       {opiniones.map((opinion) => (
         
         <div
+            key={opinion.id}
             id={opinion.id}
             className="px-5 py-6 rounded-[20px] max-w-[370px] md:mr-10 sm:mr-5 mr-0 my-5 feedback-card flex-justify-between"
             >
