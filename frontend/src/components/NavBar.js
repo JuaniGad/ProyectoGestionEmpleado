@@ -1,22 +1,35 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-scroll";
 import { logo, close, menu } from "../assets";
 import { navLinks } from "../constants";
 
 export default function NavBar() {
   const [toggle, setToggle] = useState(false);
+  navLinks.map((ejemplo) => console.log(ejemplo.id));
 
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar ">
+    <nav className="w-full flex py-6 justify-between items-center navbar">
       <img alt="logo" src={logo} className="w-[124px] h-[32px]" />
       <div className="">
         <ul className=" items-center list-none sm:flex hidden justify-end flex-1">
           {navLinks.map((nav, index) => (
             <li
               key={nav.id}
-              className={`font-poppins font-normal cursor-pointer px-[10px] text-[16px] text-white ${index === navLinks.length - 1 ? "mr-0" : "mr-10"} `}
+              className={`font-poppins font-normal cursor-pointer px-[10px] text-[16px] text-white ${
+                index === navLinks.length - 1 ? "mr-0" : "mr-10"
+              } `}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              <Link
+                to={`${nav.id}`}
+                activeClass="active"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                {nav.title}
+              </Link>
             </li>
           ))}
         </ul>
@@ -43,7 +56,16 @@ export default function NavBar() {
                   index === navLinks.length - 1 ? "mr-0" : "mb-4"
                 }`}
               >
-                <a href={`#${nav.id}`}>{nav.title}</a>
+                <Link
+                  to={`${nav.id}`}
+                  activeClass="active"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  {nav.title}
+                </Link>
               </li>
             ))}
           </ul>
