@@ -1,10 +1,10 @@
 import React from "react";
-
 import { opiniones } from "../constants";
 
 export default function Clientes() {
   return (
-    <div className="flex flex-wrap sm:justify-start justify-center w-full feedback-containter relative z-[1]">
+ <div className="flex flex-wrap sm:justify-start justify-center w-full feedback-containter relative z-[1]">
+ 
       {opiniones.map((opinion) => (
         
         <div
