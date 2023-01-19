@@ -7,6 +7,23 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+var loginRouter =require('./routes/admin/login');
+var homeRouter=require('./routes/admin/home');
+
+var cargasRouter=require('./routes/admin/cargas');
+var editarRouter=require('./routes/admin/editar');
+var asistenciaRouter=require('./routes/admin/asistencias');
+var cargarEmpRouter=require('./routes/admin/cargar_empleado');
+
+
+var consultasRouter=require('./routes/admin/consultas');
+var cobrosRouter=require('./routes/admin/cobros');
+var detalleRouter=require('./routes/admin/detalle');
+var nominaEmpRouter=require('./routes/admin/nominaEmp');
+var nominaMenRouter=require('./routes/admin/nominaMen');
+
+
+
 var app = express();
 
 // view engine setup
@@ -21,6 +38,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+app.use('/admin/login',loginRouter);
+app.use('/admin/home',homeRouter);
+
+//Cargas y ediciones
+app.use('/admin/cargas',cargasRouter);
+app.use('/admin/editar_empleado',editarRouter);
+app.use('/admin/asistencias',asistenciaRouter);
+app.use('/admin/cargar_empleado',cargarEmpRouter);
+
+//consultas
+app.use('/admin/consultas',consultasRouter);
+app.use('/admin/nomina',nominaEmpRouter);
+app.use('/admin/nomina_mensual',nominaMenRouter);
+app.use('/admin/detalle',detalleRouter);
+app.use('/admin/cobros',cobrosRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
