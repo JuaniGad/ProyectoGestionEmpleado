@@ -10,7 +10,7 @@ export default function Enlaces() {
         <div className="flex-1 flex- flex-col justify-start mr-10 ">
           <img
             src={logo}
-            alt="gyrogear"
+            alt="Gyro"
             className="w-[260px] h-[72px] object-contain"
           />
           <p className={`${styles.paragraph} mt-4 max-w-[310px]`}>

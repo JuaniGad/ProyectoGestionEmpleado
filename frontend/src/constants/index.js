@@ -80,23 +80,23 @@ export const footerLinks = [
     links: [
       {
         name: "Content",
-        link: "https://www.gyrogear.com/content/",
+        link: "https://www.Gyro.com/content/",
       },
       {
         name: "How it Works",
-        link: "https://www.gyrogear.com/how-it-works/",
+        link: "https://www.Gyro.com/how-it-works/",
       },
       {
         name: "Create",
-        link: "https://www.gyrogear.com/create/",
+        link: "https://www.Gyro.com/create/",
       },
       {
         name: "Explore",
-        link: "https://www.gyrogear.com/explore/",
+        link: "https://www.Gyro.com/explore/",
       },
       {
         name: "Terms & Services",
-        link: "https://www.gyrogear.com/terms-and-services/",
+        link: "https://www.Gyro.com/terms-and-services/",
       },
     ],
   },
@@ -105,23 +105,23 @@ export const footerLinks = [
     links: [
       {
         name: "Help Center",
-        link: "https://www.gyrogear.com/help-center/",
+        link: "https://www.Gyro.com/help-center/",
       },
       {
         name: "Partners",
-        link: "https://www.gyrogear.com/partners/",
+        link: "https://www.Gyro.com/partners/",
       },
       {
         name: "Suggestions",
-        link: "https://www.gyrogear.com/suggestions/",
+        link: "https://www.Gyro.com/suggestions/",
       },
       {
         name: "Blog",
-        link: "https://www.gyrogear.com/blog/",
+        link: "https://www.Gyro.com/blog/",
       },
       {
         name: "Newsletters",
-        link: "https://www.gyrogear.com/newsletters/",
+        link: "https://www.Gyro.com/newsletters/",
       },
     ],
   },
@@ -130,11 +130,11 @@ export const footerLinks = [
     links: [
       {
         name: "Our Partner",
-        link: "https://www.gyrogear.com/our-partner/",
+        link: "https://www.Gyro.com/our-partner/",
       },
       {
         name: "Become a Partner",
-        link: "https://www.gyrogear.com/become-a-partner/",
+        link: "https://www.Gyro.com/become-a-partner/",
       },
     ],
   },

@@ -19,7 +19,7 @@ export default function Info() {
           tu empresa
         </h1>
         <p className={`${styles.paragraph} max-w-[470px] mt-5 `}>
-          Gryogear es una app diseñada para el sector de RR.HH de tu empresa,ya
+          Gryo es una app diseñada para el sector de RR.HH de tu empresa,ya
           que le permitira gestionar y llevar un mejor control de los empleados
           de una forma mas FACIL, ORDENADA y EFICIENTE.
         </p>
