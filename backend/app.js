@@ -69,17 +69,17 @@ app.use('/admin/login',loginRouter);
 app.use('/admin/home',secured,homeRouter);
 
 //Cargas y ediciones
-app.use('/admin/cargas',cargasRouter);
-app.use('/admin/editar_empleado',editarRouter);
-app.use('/admin/asistencias',asistenciaRouter);
-app.use('/admin/cargar_empleado',cargarEmpRouter);
+app.use('/admin/cargas',secured,cargasRouter);
+app.use('/admin/editar_empleado',secured,editarRouter);
+app.use('/admin/asistencias',secured,asistenciaRouter);
+app.use('/admin/cargar_empleado',secured,cargarEmpRouter);
 
 //consultas
-app.use('/admin/consultas',consultasRouter);
-app.use('/admin/nomina',nominaEmpRouter);
-app.use('/admin/nomina_mensual',nominaMenRouter);
-app.use('/admin/detalle',detalleRouter);
-app.use('/admin/cobros',cobrosRouter);
+app.use('/admin/consultas',secured,consultasRouter);
+app.use('/admin/nomina',secured,nominaEmpRouter);
+app.use('/admin/nomina_mensual',secured,nominaMenRouter);
+app.use('/admin/detalle',secured,detalleRouter);
+app.use('/admin/cobros',secured,cobrosRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
