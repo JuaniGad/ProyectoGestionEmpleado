@@ -4,6 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
+require('dotenv').config();//Permite que el proyecto tiene un archivo .env que va  a necesitar
+var session=require('express-session');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -36,11 +40,33 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+secured=async(req,res,next)=>{
+  try{
+    console.log(req.session.id_usuario);
+      if(req.session.id_usuario){
+        next();
+      }else{
+        res.redirect('/admin/login');
+      }
+    }catch(error){
+      console.log(error);
+    }
+  }
+
+  app.use(session({
+    secret: 'fsafsagaadgdagda',
+    cookie:{maxAge:null},
+    resave:false,
+    saveUninitialized:true
+  }))
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.use('/admin/login',loginRouter);
-app.use('/admin/home',homeRouter);
+app.use('/admin/home',secured,homeRouter);
 
 //Cargas y ediciones
 app.use('/admin/cargas',cargasRouter);
@@ -54,7 +80,6 @@ app.use('/admin/nomina',nominaEmpRouter);
 app.use('/admin/nomina_mensual',nominaMenRouter);
 app.use('/admin/detalle',detalleRouter);
 app.use('/admin/cobros',cobrosRouter);
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

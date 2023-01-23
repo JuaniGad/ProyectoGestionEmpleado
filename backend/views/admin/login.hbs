@@ -1,13 +1,17 @@
-   <form action="/action_page.php"> 
+   <form action="/admin/login" method="post"> 
         <div class="container">
             <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+            <input type="text" placeholder="Enter Username" name="usuario" required>
  
             <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <input type="password" placeholder="Enter Password" name="password" required>
  
             <button type="submit">Login</button>
         </div>
+
+        {{#if error}}
+        <p>Usuario o clave incorrectos</p>
+        {{/if}}
  
         </div>
     </form>
