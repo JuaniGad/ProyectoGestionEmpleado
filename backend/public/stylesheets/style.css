@@ -103,3 +103,34 @@ span.psw {
 .active{
   background-color: #7e3000
 }
+
+.formulario_carga{
+text-align: center ;
+align-items: center;
+}
+
+.formulario_carga input{
+  align-items: center;
+  max-width: 740px;
+  margin-bottom: 15px;
+}
+
+.formulario_carga label{
+  display: block;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.cargar_submit{  
+  background-color: #f5b43c;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.cargar_submit:hover{
+  background-color: #7e3000;
+}

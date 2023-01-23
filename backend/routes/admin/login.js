@@ -2,11 +2,13 @@ var express=require('express');
 var router=express.Router();
 var usuariosModel=require('./../../models/usuariosModel');
 
+
 router.get('/',function(req,res,next){
   res.render('admin/login',{
     layout:'admin/layout'
   });
 });
+
 
 router.post('/',async (req,res,next)=>{
   try{
@@ -14,7 +16,6 @@ router.post('/',async (req,res,next)=>{
       var password=req.body.password;//caputar password
 
       var data=await usuariosModel.getUsernameAndPassword(usuario,password);
-      console.log(data);
 
       if(data!=undefined){
 
