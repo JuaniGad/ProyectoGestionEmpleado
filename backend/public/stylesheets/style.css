@@ -111,13 +111,16 @@ align-items: center;
 
 .formulario_carga input{
   align-items: center;
-  max-width: 740px;
+  width: 100%;
   margin-bottom: 15px;
+  
 }
 
 .formulario_carga label{
+  text-align: start;
   display: block;
   margin-top: 5px;
+  width: 100%;
   font-weight: bold;
 }
 
@@ -129,8 +132,36 @@ align-items: center;
   border: none;
   cursor: pointer;
   width: 100%;
+  max-width: 1480px;
 }
 
 .cargar_submit:hover{
   background-color: #7e3000;
+}
+
+.div_carga{
+  display: inline-block;
+  width: 100%;
+  max-width: 740px;
+} 
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+thead td{
+  font-weight: bold;
+  border: 1px solid black ;
+}
+
+tbody td{
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }

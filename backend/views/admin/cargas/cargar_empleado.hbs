@@ -8,40 +8,66 @@
         </ul>
     </nav>
 
-    <form class="formulario_carga"  action="/admin/cargar_empleado" method="post">    
-        <label>Fecha de alta</label>
-        <input type="date" name="alta">
+    {{#if carga}}
+    <h2>{{message}}</h2>
+    {{/if}}
 
-        <label>Nombre:</label>
-        <input type="text" placeholder="Ingrese nombre" name="nombre_form">
+    <form class="formulario_carga" action="/admin/cargar_empleado" method="post">
+        <div class="div_carga">
+            <label>Nombre:</label>
+            <input type="text" placeholder="Ingrese nombre" name="nombre">
+        </div>
 
-        <label>Apellido:</label>
-        <input type="text" placeholder="Ingrese apellido" name="apellido_form">
+        <div class="div_carga">
+            <label>Apellido:</label>
+            <input type="text" placeholder="Ingrese apellido" name="apellido">
+        </div>
 
-        <label>DNI:</label>
-        <input type="text" placeholder="Ingrese DNI" name="dni">
+        <div class="div_carga">
+            <label>DNI:</label>
+            <input type="text" placeholder="Ingrese DNI" name="dni">
+        </div>
 
+        <div class="div_carga">
+            <label>Domicilio:</label>
+            <input type="text" placeholder="Ingrese domicilio" name="domicilio">
+        </div>
 
-        <label>Domicilio:</label>
-        <input type="text" placeholder="Ingrese domicilio" name="domicilio">
+        <div class="div_carga">
+            <label>Telefono:</label>
+            <input type="text" placeholder="Ingrese telefono" name="telefono">
+        </div>
 
-        <label>Telefono:</label>
-        <input type="text" placeholder="Ingrese telefono" name="telefono">
+        <div class="div_carga">
+            <label>E-mail:</label>
+            <input type="text" placeholder="Ingrese E-mail" name="email">
+        </div>
 
+        <div class="div_carga">
+            <label>Puesto:</label>
+            <input type="text" placeholder="Ingrese puesto" name="puesto">
+        </div>
 
-        <label>E-mail:</label>
-        <input type="text" placeholder="Ingrese E-mail" name="email">
+        <div class="div_carga">
+            <label>Sueldo:</label>
+            <input type="text" placeholder="Ingrese sueldo" name="sueldo">
+        </div>
 
+        <div class="div_carga">
+            <label>Fecha de alta</label>
+            <input type="date" name="alta">
+        </div>
 
-        <label>Puesto:</label>
-        <input type="text" placeholder="Ingrese puesto" name="puest">
-
-        <label>Sueldo:</label>
-        <input type="text" placeholder="Ingrese sueldo" name="sueldo">
         <div>
-        <input type="submit" value="Cargar empleado" class="cargar_submit">
-        
+
+            <input type="submit" value="Cargar empleado" class="cargar_submit">
+
     </form>
+
+
+    {{#if error}}
+    <h5>{{message}}</h5>
+    {{/if}}
 
 
 </div>
