@@ -1,18 +1,49 @@
 <div>
-    <nav class="nav_class">
-        <ul>
-            <li><a href="/admin/nomina" class="active">Nomina de empleados</a></li>
-            <li><a href="/admin/nomina_mensual">Nomina mensual de sueldos</a></li>
-            <li><a href="/admin/detalle" >Detalle de empleado</a></li>
-            <li><a href="/admin/cobros">Cobro mensual individual</a></li>
-            <li><a href="/admin/home">Volver atras</a></li>
-        </ul>
-    </nav>
+  <nav class="nav_class">
+    <ul>
+      <li><a href="/admin/nomina" class="active">Nomina de empleados</a></li>
+      <li><a href="/admin/nomina_mensual">Nomina mensual de sueldos</a></li>
+      <li><a href="/admin/detalle">Detalle de empleado</a></li>
+      <li><a href="/admin/cobros">Cobro mensual individual</a></li>
+      <li><a href="/admin/home">Volver atras</a></li>
+    </ul>
+  </nav>
 
-    <h1>Descripcion de cada opcion + Instructivo</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti error autem dicta doloremque quos id totam fugiat illo officiis nisi a illum accusamus, et asperiores, sapiente sit iste voluptatum provident.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti error autem dicta doloremque quos id totam fugiat illo officiis nisi a illum accusamus, et asperiores, sapiente sit iste voluptatum provident.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti error autem dicta doloremque quos id totam fugiat illo officiis nisi a illum accusamus, et asperiores, sapiente sit iste voluptatum provident.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti error autem dicta doloremque quos id totam fugiat illo officiis nisi a illum accusamus, et asperiores, sapiente sit iste voluptatum provident.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti error autem dicta doloremque quos id totam fugiat illo officiis nisi a illum accusamus, et asperiores, sapiente sit iste voluptatum provident.</p>
+  <h1>Nomina de empleados</h1>
+  <div class="table-wrapper">
+  <table class="fl-table">
+    <thead>
+    <tr>
+      <td>ID</td>
+      <td>Nombre</td>
+      <td>Apellido</td>
+      <td>DNI</td>
+      <td>Domicilio</td>
+      <td>Sueldo</td>
+      <td>Puesto</td>
+      <td>Telefono</td>
+      <td>E-mail</td>
+      <td>Fecha de alta</td>
+    </tr>
+    </thead>
+
+    <tbody>
+    {{#each detallesFormat}}
+      <tr>
+        <td>{{id}}</td>
+        <td>{{nombre}}</td>
+        <td>{{apellido}}</td>
+        <td>{{dni}}</td>
+        <td>{{domicilio}}</td>
+        <td>{{sueldo}}</td>
+        <td>{{puesto}}</td>
+        <td>{{telefono}}</td>
+        <td>{{email}}</td>
+        <td>{{alta}}</td>
+      </tr>
+    {{/each}}
+    </tbody>    
+
+  </table>
+</div>
 </div>
