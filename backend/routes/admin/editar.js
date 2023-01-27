@@ -27,7 +27,6 @@ router.post('/editar',async function(req,res,next){
       email:req.body.email,
       puesto:req.body.puesto,
       sueldo: req.body.sueldo,
-      alta: req.body.alta
     }
     console.log(obj)
 

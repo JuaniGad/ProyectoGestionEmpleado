@@ -13,7 +13,7 @@ router.post('/', async (req,res,next)=>{
 
   try{ 
     
-    if(req.body.alta !="" && req.body.nombre != "" && req.body.apellido != "" && req.body.dni != "" && req.body.domicilio != "" && req.body.telefono != "" && req.body.email!="" && req.body.puesto != "" && req.body.sueldo != ""){
+    if(req.body.nombre != "" && req.body.apellido != "" && req.body.dni != "" && req.body.domicilio != "" && req.body.telefono != "" && req.body.email!="" && req.body.puesto != "" && req.body.sueldo != ""){
     await insertarEmpleados.insertEmp(req.body);
     
     await insertarSueldo2022.insertEmpSuel22();
