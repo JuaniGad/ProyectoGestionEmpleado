@@ -1,0 +1,56 @@
+<div>
+  <nav class="nav_class">
+    <ul>
+      <li><a href="/admin/cargar_empleado">Cargar empleado</a></li>
+      <li><a href="/admin/ediciones_sueldos" class="active">Ediciones</a></li>
+      <li><a href="/admin/home">Volver atrás</a></li>
+    </ul>
+  </nav>
+
+{{#if error}}
+  <h3>{{error.message}}</h3>
+{{/if}}
+
+  <h1>Nomina de empleados</h1>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>Nombre</td>
+          <td>Apellido</td>
+          <td>DNI</td>
+          <td>Domicilio</td>
+          <td>Sueldo base</td>
+          <td>Puesto</td>
+          <td>Telefono</td>
+          <td>E-mail</td>
+          <td>Fecha de alta</td>
+          <td>Editar</td>
+          <td>Sueldo</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        {{#each detallesFormat}}
+          <tr>
+            <td>{{id}}</td>
+            <td>{{nombre}}</td>
+            <td>{{apellido}}</td>
+            <td>{{dni}}</td>
+            <td>{{domicilio}}</td>
+            <td>${{sueldo}}</td>
+            <td>{{puesto}}</td>
+            <td>{{telefono}}</td>
+            <td>{{email}}</td>
+            <td>{{alta}}</td>
+            <td><a href="/admin/editar_empleado/{{id}}">Editar</a></td>
+            <td><a href="/admin/asistencias">Cargar</a></td>
+          </tr>
+        {{/each}}
+      </tbody>
+
+    </table>
+  </div>
+
+</div>

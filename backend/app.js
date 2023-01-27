@@ -18,6 +18,7 @@ var cargasRouter=require('./routes/admin/cargas');
 var editarRouter=require('./routes/admin/editar');
 var asistenciaRouter=require('./routes/admin/asistencias');
 var cargarEmpRouter=require('./routes/admin/cargar_empleado');
+var edicioneSuelRouter=require('./routes/admin/ediciones_sueldos')
 
 
 var consultasRouter=require('./routes/admin/consultas');
@@ -25,6 +26,7 @@ var cobrosRouter=require('./routes/admin/cobros');
 var detalleRouter=require('./routes/admin/detalle');
 var nominaEmpRouter=require('./routes/admin/nominaEmp');
 var nominaMenRouter=require('./routes/admin/nominaMen');
+const { secureHeapUsed } = require('crypto');
 
 
 
@@ -62,6 +64,7 @@ secured=async(req,res,next)=>{
   }))
 
 
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
@@ -73,6 +76,7 @@ app.use('/admin/cargas',secured,cargasRouter);
 app.use('/admin/editar_empleado',secured,editarRouter);
 app.use('/admin/asistencias',secured,asistenciaRouter);
 app.use('/admin/cargar_empleado',secured,cargarEmpRouter);
+app.use('/admin/ediciones_sueldos',secured,edicioneSuelRouter);
 
 //consultas
 app.use('/admin/consultas',secured,consultasRouter);
@@ -80,6 +84,11 @@ app.use('/admin/nomina',secured,nominaEmpRouter);
 app.use('/admin/nomina_mensual',secured,nominaMenRouter);
 app.use('/admin/detalle',secured,detalleRouter);
 app.use('/admin/cobros',secured,cobrosRouter);
+
+app.get('/admin/ediciones_sueldos', (req, res) => {
+  res.render('admin/cargas/ediciones_sueldos', { error: req.session.error });
+  req.session.error = null;
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

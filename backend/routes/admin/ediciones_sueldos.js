@@ -6,7 +6,6 @@ var moment=require('moment')
 router.get('/',async function(req,res,next){
 
   var detallesEmp=await empleadosVis.getEmpleados();
-
   var detallesFormat=[];
 
   detallesEmp.map((detail)=>{
@@ -14,13 +13,13 @@ router.get('/',async function(req,res,next){
     detallesFormat.push(detail);
   })
 
-  
-  res.render('admin/consultas/nomina_empleados',{
+  res.render('admin/cargas/ediciones_sueldo',{
     layout:'admin/layout',
     detallesFormat
-    
   })
 
 })
+
+
 
 module.exports=router;
