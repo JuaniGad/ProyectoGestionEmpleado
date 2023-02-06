@@ -123,7 +123,6 @@ span.psw {
   display: flex;
   justify-content: space-evenly;
 
-  
 }
 
 .nav_class li a {
@@ -218,12 +217,27 @@ tbody td{
   border-bottom: 1px solid black;
 }
 .orden{
-  padding: 10px;
-  display: inline-block;
+  padding: 12px 20px;
+  display:inline-flex;
   margin-bottom: 20px;
-  font-weight: bolder;
-  background: #dfd6a775;
+  background: #dfd6a724; 
   color:rgb(5, 5, 5);
   box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.75);
 
+}
+
+
+
+select{
+  width: 20%;
+  padding: 12px 20px;
+  background: #dfd6a724; 
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  cursor: pointer;
+  overflow-y: auto;
+}
+
+option{
+  font-size: 15px;
 }

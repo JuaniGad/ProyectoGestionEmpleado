@@ -30,6 +30,28 @@
       <a class="orden" href="/admin/ediciones_sueldos/orderById">Ordenar por id</a>
       <a class="orden" href="/admin/ediciones_sueldos/orderByApellido">Ordenar
         por apellido</a>
+
+      <div class="filter">
+
+        <select>
+          {{#each detallesFormatID}}
+            <option>{{id}}</option>
+          {{/each}}
+        </select>
+
+        <select>
+          {{#each detallesFormatAP}}
+            <option>{{this}}</option>
+          {{/each}}
+        </select>
+
+        <select>
+          {{#each detallesFormatNom}}
+            <option>{{this}}</option>
+          {{/each}}
+        </select>
+
+      </div>
       <table>
         <thead>
           <tr>
