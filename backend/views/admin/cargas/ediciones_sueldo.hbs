@@ -1,54 +1,89 @@
-<div>
-  <nav class="nav_class">
-    <ul>
-      <li><a href="/admin/cargar_empleado">Cargar empleado</a></li>
-      <li><a href="/admin/ediciones_sueldos" class="active">Ediciones</a></li>
-      <li><a href="/admin/home">Volver atrás</a></li>
-    </ul>
-  </nav>
+<div class="container">
 
-{{#if error}}
-  <h3>{{error.message}}</h3>
-{{/if}}
+  <div class="first_nav">
 
-  <h1>Nomina de empleados</h1>
-  <div>
-    <table>
-      <thead>
-        <tr>
-          <td>ID</td>
-          <td>Nombre</td>
-          <td>Apellido</td>
-          <td>DNI</td>
-          <td>Domicilio</td>
-          <td>Sueldo base</td>
-          <td>Puesto</td>
-          <td>Telefono</td>
-          <td>E-mail</td>
-          <td>Editar</td>
-          <td>Sueldo</td>
-        </tr>
-      </thead>
+    <nav class="nav_class">
+      <ul>
+        <li><a href="/admin/home">Home</a></li>
+        <li><a href="/admin/cargas" class="active">Cargas de Datos</a></li>
+        <li><a href="/admin/consultas">Consultas</a></li>
 
-      <tbody>
-        {{#each detallesFormat}}
+      </ul>
+    </nav>
+
+    <nav class="nav_class">
+      <ul>
+        <li><a href="/admin/cargar_empleado">Cargar empleado</a></li>
+        <li><a href="/admin/ediciones_sueldos" class="active">Ediciones</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="main">
+    {{#if error}}
+      <h3>{{error.message}}</h3>
+    {{/if}}
+
+    <h1>Nomina de empleados</h1>
+
+    <div class="edic_table">
+      <a class="orden" href="/admin/ediciones_sueldos/orderById">Ordenar por id</a>
+      <a class="orden" href="/admin/ediciones_sueldos/orderByApellido">Ordenar
+        por apellido</a>
+      <table>
+        <thead>
           <tr>
-            <td>{{id}}</td>
-            <td>{{nombre}}</td>
-            <td>{{apellido}}</td>
-            <td>{{dni}}</td>
-            <td>{{domicilio}}</td>
-            <td>${{sueldo}}</td>
-            <td>{{puesto}}</td>
-            <td>{{telefono}}</td>
-            <td>{{email}}</td>
-            <td><a href="/admin/editar_empleado/{{id}}">Editar</a></td>
-            <td><a href="/admin/asistencias">Cargar</a></td>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Apellido</td>
+            <td>DNI</td>
+            <td>Domicilio</td>
+            <td>Sueldo base</td>
+            <td>Puesto</td>
+            <td>Telefono</td>
+            <td>E-mail</td>
+            <td>Editar</td>
+            <td>Sueldo</td>
+            <td>Eliminar</td>
           </tr>
-        {{/each}}
-      </tbody>
+        </thead>
 
-    </table>
+        <tbody>
+          {{#each detallesFormat}}
+            <tr>
+              <td>{{id}}</td>
+              <td>{{nombre}}</td>
+              <td>{{apellido}}</td>
+              <td>{{dni}}</td>
+              <td>{{domicilio}}</td>
+              <td>${{sueldo}}</td>
+              <td>{{puesto}}</td>
+              <td>{{telefono}}</td>
+              <td>{{email}}</td>
+              <td><a href="/admin/editar_empleado/{{id}}"><img
+                    src="/images/editar.png"
+                    width="25px"
+                    height="25px"
+                    alt="editar"
+                  /></a></td>
+              <td><a href="/admin/ediciones_sueldos/cargar_sueldos/{{id}}"><img
+                    src="/images/cargar.png"
+                    width="35px"
+                    height="25px"
+                    alt="cargar"
+                  /></a></td>
+              <td><a href="/admin/ediciones_sueldos/eliminar/{{id}}"><img
+                    src="/images/eliminar.png"
+                    width="25px"
+                    height="25px"
+                    alt="eliminar"
+                  /></a></td>
+            </tr>
+          {{/each}}
+        </tbody>
+
+      </table>
+    </div>
   </div>
 
 </div>

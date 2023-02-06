@@ -1,18 +1,32 @@
-<div>
-    <nav class="nav_class">
-        <ul>
-            <li><a href="/admin/nomina">Nomina de empleados</a></li>
-            <li><a href="/admin/nomina_mensual">Nomina mensual de sueldos</a></li>
-            <li><a href="/admin/detalle"class="active">Detalle de empleado</a></li>
-            <li><a href="/admin/cobros" >Cobro mensual individual</a></li>
-            <li><a href="/admin/home">Volver atras</a></li>
-        </ul>
-    </nav>
+<div class="container">
+    <div class="first_nav">
 
-    <h1>Descripcion de cada opcion + Instructivo</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti error autem dicta doloremque quos id totam fugiat illo officiis nisi a illum accusamus, et asperiores, sapiente sit iste voluptatum provident.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti error autem dicta doloremque quos id totam fugiat illo officiis nisi a illum accusamus, et asperiores, sapiente sit iste voluptatum provident.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti error autem dicta doloremque quos id totam fugiat illo officiis nisi a illum accusamus, et asperiores, sapiente sit iste voluptatum provident.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti error autem dicta doloremque quos id totam fugiat illo officiis nisi a illum accusamus, et asperiores, sapiente sit iste voluptatum provident.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti error autem dicta doloremque quos id totam fugiat illo officiis nisi a illum accusamus, et asperiores, sapiente sit iste voluptatum provident.</p>
+        <nav class="nav_class">
+            <ul>
+                <li><a href="/admin/home">Home</a></li>
+                <li><a href="/admin/cargas">Cargas de Datos</a></li>
+                <li><a href="/admin/consultas" class="active">Consultas</a></li>
+
+            </ul>
+        </nav>
+
+        <nav class="nav_class">
+            <ul>
+                <li><a href="/admin/consultas/nomina_empleados">Nomina de empleados</a></li>
+                <li><a href="/admin/consultas/nomina_mensual">Nomina mensual de sueldos</a></li>
+                <li><a href="/admin/consultas/detalle" class="active">Detalle de empleado</a></li>
+                <li><a href="/admin/home">Volver atras</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="main">
+        <form class="formulario_carga" method="post" action="/admin/consultas/detalle/individual">
+            <div class="div_carga">
+                <label>ID:</label>
+                <input type="text" placeholder="Ingrese id del empleado a buscar" name="id">
+            </div>
+            <input type="submit" value="Buscar" class="cargar_submit" />
+    </div>
+    </form>
 </div>
+</div>  

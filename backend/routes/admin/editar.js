@@ -28,7 +28,6 @@ router.post('/editar',async function(req,res,next){
       puesto:req.body.puesto,
       sueldo: req.body.sueldo,
     }
-    console.log(obj)
 
     await empleadosVis.modificarEmpleadoById(obj,req.body.id);
     res.redirect('/admin/ediciones_sueldos')  

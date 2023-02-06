@@ -1,0 +1,105 @@
+<div class="container">
+  <div class="first_nav">
+
+    <nav class="nav_class">
+      <ul>
+        <li><a href="/admin/home">Home</a></li>
+        <li><a href="/admin/cargas">Cargas de Datos</a></li>
+        <li><a href="/admin/consultas" class="active">Consultas</a></li>
+
+      </ul>
+    </nav>
+
+    <nav class="nav_class">
+      <ul>
+        <li><a href="/admin/consultas/nomina_empleados">Nomina de empleados</a></li>
+        <li><a href="/admin/consultas/nomina_mensual">Nomina mensual de sueldos</a></li>
+        <li><a href="/admin/consultas/detalle" class="active">Detalle de empleado</a></li>
+        <li><a href="/admin/home">Volver atras</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="main">
+    <form class="formulario_carga" method="post" action="/admin/consultas/detalle/individual">
+      <div class="div_carga">
+        <label>ID:</label>
+        <input type="text" placeholder="Ingrese id del empleado a buscar" name="id">
+      </div>
+      <input type="submit" value="Buscar" class="cargar_submit" />
+  </div>
+  </form>
+
+  <table>
+
+    <h2>Informacion del empleado</h2>
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>Nombre</td>
+        <td>Apellido</td>
+        <td>DNI</td>
+        <td>Domicilio</td>
+        <td>Sueldo</td>
+        <td>Puesto</td>
+        <td>Telefono</td>
+        <td>E-mail</td>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td>{{empleadoInfo.id}}</td>
+        <td>{{empleadoInfo.nombre}}</td>
+        <td>{{empleadoInfo.apellido}}</td>
+        <td>{{empleadoInfo.dni}}</td>
+        <td>{{empleadoInfo.domicilio}}</td>
+        <td>{{empleadoInfo.sueldo}}</td>
+        <td>{{empleadoInfo.puesto}}</td>
+        <td>{{empleadoInfo.telefono}}</td>
+        <td>{{empleadoInfo.email}}</td>
+      </tr>
+
+    </tbody>
+
+  </table>
+  <h2>Cobros mensuales del empleado</h2>
+  <div class="edic_table">
+    <table>
+      <thead>
+        <tr>
+          <td>Enero</td>
+          <td>Febrero</td>
+          <td>Marzo</td>
+          <td>Abril</td>
+          <td>Mayo</td>
+          <td>Junio</td>
+          <td>Julio</td>
+          <td>Agosto</td>
+          <td>Septiembre</td>
+          <td>Octubre</td>
+          <td>Noviembre</td>
+          <td>Diciembre</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>${{empleadoSueldos.enero}}</td>
+          <td>${{empleadoSueldos.febrero}}</td>
+          <td>${{empleadoSueldos.marzo}}</td>
+          <td>${{empleadoSueldos.abril}}</td>
+          <td>${{empleadoSueldos.mayo}}</td>
+          <td>${{empleadoSueldos.junio}}</td>
+          <td>${{empleadoSueldos.julio}}</td>
+          <td>${{empleadoSueldos.agosto}}</td>
+          <td>${{empleadoSueldos.septiembre}}</td>
+          <td>${{empleadoSueldos.octubre}}</td>
+          <td>${{empleadoSueldos.noviembre}}</td>
+          <td>${{empleadoSueldos.diciembre}}</td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>

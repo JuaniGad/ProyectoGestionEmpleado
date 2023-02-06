@@ -1,47 +1,63 @@
-<div>
-  <nav class="nav_class">
-    <ul>
-      <li><a href="/admin/nomina" class="active">Nomina de empleados</a></li>
-      <li><a href="/admin/nomina_mensual">Nomina mensual de sueldos</a></li>
-      <li><a href="/admin/detalle">Detalle de empleado</a></li>
-      <li><a href="/admin/cobros">Cobro mensual individual</a></li>
-      <li><a href="/admin/home">Volver atras</a></li>
-    </ul>
-  </nav>
+<div class="container">
+  <div class="first_nav">
 
-  <h1>Nomina de empleados</h1>
-  <div>
-  <table >
-    <thead>
-    <tr>
-      <td>ID</td>
-      <td>Nombre</td>
-      <td>Apellido</td>
-      <td>DNI</td>
-      <td>Domicilio</td>
-      <td>Sueldo</td>
-      <td>Puesto</td>
-      <td>Telefono</td>
-      <td>E-mail</td>
-    </tr>
-    </thead>
+    <nav class="nav_class">
+      <ul>
+        <li><a href="/admin/home">Home</a></li>
+        <li><a href="/admin/cargas">Cargas de Datos</a></li>
+        <li><a href="/admin/consultas" class="active">Consultas</a></li>
 
-    <tbody>
-    {{#each detallesFormat}}
-      <tr>
-        <td>{{id}}</td>
-        <td>{{nombre}}</td>
-        <td>{{apellido}}</td>
-        <td>{{dni}}</td>
-        <td>{{domicilio}}</td>
-        <td>{{sueldo}}</td>
-        <td>{{puesto}}</td>
-        <td>{{telefono}}</td>
-        <td>{{email}}</td>
-      </tr>
-    {{/each}}
-    </tbody>    
+      </ul>
+    </nav>
 
-  </table>
-</div>
+    <nav class="nav_class">
+      <ul>
+        <li><a href="/admin/consultas/nomina_empleados">Nomina de empleados</a></li>
+        <li><a href="/admin/consultas/nomina_mensual">Nomina mensual de sueldos</a></li>
+        <li><a href="/admin/consultas/detalle" class="active">Detalle de
+            empleado</a></li>
+        <li><a href="/admin/home">Volver atras</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="main">
+    <h1>Nomina de empleados</h1>
+    <div class="edic_table">
+      <a class="orden" >Ordenar por id</a>
+      <a class="orden" >Ordenar
+        por apellido</a>
+      <table>
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Apellido</td>
+            <td>DNI</td>
+            <td>Domicilio</td>
+            <td>Sueldo</td>
+            <td>Puesto</td>
+            <td>Telefono</td>
+            <td>E-mail</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          {{#each detallesFormat}}
+            <tr>
+              <td>{{id}}</td>
+              <td>{{nombre}}</td>
+              <td>{{apellido}}</td>
+              <td>{{dni}}</td>
+              <td>{{domicilio}}</td>
+              <td>{{sueldo}}</td>
+              <td>{{puesto}}</td>
+              <td>{{telefono}}</td>
+              <td>{{email}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+
+      </table>
+    </div>
+  </div>
 </div>

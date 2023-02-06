@@ -1,18 +1,76 @@
-<div>
+<div class="container">
+  <div class="first_nav">
+
     <nav class="nav_class">
-        <ul>
-            <li><a href="/admin/nomina">Nomina de empleados</a></li>
-            <li><a href="/admin/nomina_mensual" class="active">Nomina mensual de sueldos</a></li>
-            <li><a href="/admin/detalle">Detalle de empleado</a></li>
-            <li><a href="/admin/cobros">Cobro mensual individual</a></li>
-            <li><a href="/admin/home">Volver atras</a></li>
-        </ul>
+      <ul>
+        <li><a href="/admin/home">Home</a></li>
+        <li><a href="/admin/cargas">Cargas de Datos</a></li>
+        <li><a href="/admin/consultas" class="active">Consultas</a></li>
+
+      </ul>
     </nav>
 
-    <h1>Descripcion de cada opcion + Instructivo</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti error autem dicta doloremque quos id totam fugiat illo officiis nisi a illum accusamus, et asperiores, sapiente sit iste voluptatum provident.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti error autem dicta doloremque quos id totam fugiat illo officiis nisi a illum accusamus, et asperiores, sapiente sit iste voluptatum provident.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti error autem dicta doloremque quos id totam fugiat illo officiis nisi a illum accusamus, et asperiores, sapiente sit iste voluptatum provident.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti error autem dicta doloremque quos id totam fugiat illo officiis nisi a illum accusamus, et asperiores, sapiente sit iste voluptatum provident.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti error autem dicta doloremque quos id totam fugiat illo officiis nisi a illum accusamus, et asperiores, sapiente sit iste voluptatum provident.</p>
+    <nav class="nav_class">
+      <ul>
+        <li><a href="/admin/consultas/nomina_empleados">Nomina de empleados</a></li>
+        <li><a href="/admin/consultas/nomina_mensual">Nomina mensual de sueldos</a></li>
+        <li><a href="/admin/consultas/detalle" class="active">Detalle de empleado</a></li>
+        <li><a href="/admin/home">Volver atras</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="main">
+    <h1>Nomina mensual de cobros</h1>
+    <div class="edic_table">
+      <a class="orden">Ordenar por id</a>
+      <a class="orden">Ordenar
+        por apellido</a>
+      <table>
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Apellido</td>
+            <td>DNI</td>
+            <td>Enero</td>
+            <td>Febrero</td>
+            <td>Marzo</td>
+            <td>Abril</td>
+            <td>Mayo</td>
+            <td>Junio</td>
+            <td>Julio</td>
+            <td>Agosto</td>
+            <td>Septiembre</td>
+            <td>Octubre</td>
+            <td>Noviembre</td>
+            <td>Diciembre</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          {{#each empleadoMen}}
+          <tr>
+            <td>{{id}}</td>
+            <td>{{nombre}}</td>
+            <td>{{apellido}}</td>
+            <td>{{dni}}</td>
+            <td>${{enero}}</td>
+            <td>${{febrero}}</td>
+            <td>${{marzo}}</td>
+            <td>${{abril}}</td>
+            <td>${{mayo}}</td>
+            <td>${{junio}}</td>
+            <td>${{julio}}</td>
+            <td>${{agosto}}</td>
+            <td>${{septiembre}}</td>
+            <td>${{octubre}}</td>
+            <td>${{noviembre}}</td>
+            <td>${{diciembre}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+
+      </table>
+    </div>
+  </div>
 </div>

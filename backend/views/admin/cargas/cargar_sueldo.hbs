@@ -1,0 +1,184 @@
+<div class="container">
+  <div class="first_nav">
+
+    <nav class="nav_class">
+      <ul>
+        <li><a href="/admin/home">Home</a></li>
+        <li><a href="/admin/cargas" class="active">Cargas de Datos</a></li>
+        <li><a href="/admin/consultas">Consultas</a></li>
+
+      </ul>
+    </nav>
+
+    <nav class="nav_class">
+      <ul>
+        <li><a href="/admin/cargar_empleado">Cargar empleado</a></li>
+        <li><a href="/admin/ediciones_sueldos" class="active">Ediciones</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="main">
+    <form
+      class="formulario_carga"
+      action="/admin/ediciones_sueldos/sueldo"
+      method="post"
+    >
+      <h1>Carga de sueldos</h1>
+      <div class="div_carga">
+        <input type="hidden" value="{{empleado.id}}" name="id" />
+        <label>Nombre:</label>
+        <input
+          type="text"
+          placeholder="Ingrese nombre"
+          value="{{empleado.nombre}}"
+          name="nombre"
+          readonly
+        />
+      </div>
+
+      <div class="div_carga">
+        <label>Apellido:</label>
+        <input
+          type="text"
+          placeholder="Ingrese apellido"
+          value="{{empleado.apellido}}"
+          name="apellido"
+          readonly
+        />
+      </div>
+
+      <div class="div_carga">
+        <label>DNI:</label>
+        <input
+          type="text"
+          placeholder="Ingrese DNI"
+          value="{{empleado.dni}}"
+          name="dni"
+          readonly
+        />
+      </div>
+
+      <div class="div_carga">
+        <label>Enero:</label>
+        <input
+          type="number"
+          placeholder="Sueldo a liquidar"
+          value="{{empleado.enero}}"
+          name="enero"
+        />
+      </div>
+
+      <div class="div_carga">
+        <label>Febrero:</label>
+        <input
+          type="number"
+          placeholder="Sueldo a liquidar"
+          value="{{empleado.febrero}}"
+          name="febrero"
+        />
+      </div>
+
+      <div class="div_carga">
+        <label>Marzo:</label>
+        <input
+          type="number"
+          placeholder="Sueldo a liquidar"
+          value="{{empleado.marzo}}"
+          name="marzo"
+        />
+      </div>
+
+      <div class="div_carga">
+        <label>Abril:</label>
+        <input
+          type="number"
+          placeholder="Sueldo a liquidar"
+          value="{{empleado.abril}}"
+          name="abril"
+        />
+      </div>
+
+      <div class="div_carga">
+        <label>Mayo:</label>
+        <input
+          type="number"
+          placeholder="Sueldo a liquidar"
+          value="{{empleado.mayo}}"
+          name="mayo"
+        />
+      </div>
+
+      <div class="div_carga">
+        <label>Junio:</label>
+        <input
+          type="number"
+          placeholder="Sueldo a liquidar"
+          value="{{empleado.junio}}"
+          name="junio"
+        />
+      </div>
+
+      <div class="div_carga">
+        <label>Julio:</label>
+        <input
+          type="number"
+          placeholder="Sueldo a liquidar"
+          value="{{empleado.julio}}"
+          name="julio"
+        />
+      </div>
+
+      <div class="div_carga">
+        <label>Agosto:</label>
+        <input
+          type="number"
+          placeholder="Sueldo a liquidar"
+          value="{{empleado.agosto}}"
+          name="agosto"
+        />
+      </div>
+
+      <div class="div_carga">
+        <label>Septiembre:</label>
+        <input
+          type="number"
+          placeholder="Sueldo a liquidar"
+          value="{{empleado.septiembre}}"
+          name="septiembre"
+        />
+      </div>
+
+      <div class="div_carga">
+        <label>Ocubre:</label>
+        <input
+          type="number"
+          placeholder="Sueldo a liquidar"
+          value="{{empleado.octubre}}"
+          name="octubre"
+        />
+      </div>
+
+      <div class="div_carga">
+        <label>Noviembre:</label>
+        <input
+          type="number"
+          placeholder="Sueldo a liquidar"
+          value="{{empleado.noviembre}}"
+          name="noviembre"
+        />
+      </div>
+
+      <div class="div_carga">
+        <label>Diciembre:</label>
+        <input
+          type="number"
+          placeholder="Sueldo a liquidar"
+          value="{{empleado.noviembre}}"
+          name="diciembre"
+        />
+      </div>
+      <input type="submit" value="Cargar" class="cargar_submit" />
+    </form>
+  </div>
+
+</div>

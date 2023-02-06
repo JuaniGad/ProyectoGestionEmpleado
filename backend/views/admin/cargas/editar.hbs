@@ -1,64 +1,76 @@
-<div>
-    <nav class="nav_class">
-        <ul>
-            <li><a href="/admin/cargar_empleado">Cargar empleado</a></li>
-            <li><a href="/admin/ediciones_sueldos">Ediciones</a></li>
-            <li><a href="/admin/home">Volver atrás</a></li>
-        </ul>
-    </nav>
+<div class="container">
+
+    <div class="first_nav">
+
+        <nav class="nav_class">
+            <ul>
+                <li><a href="/admin/home">Home</a></li>
+                <li><a href="/admin/cargas" class="active">Cargas de Datos</a></li>
+                <li><a href="/admin/consultas">Consultas</a></li>
+
+            </ul>
+        </nav>
+
+        <nav class="nav_class">
+            <ul>
+                <li><a href="/admin/cargar_empleado">Cargar empleado</a></li>
+                <li><a href="/admin/ediciones_sueldos" class="active">Ediciones</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <div>
 
-    <h1>Editar empleado</h1>
+        <h1>Editar empleado</h1>
 
-    <form class="formulario_carga" action="/admin/editar_empleado/editar" method="post">
-        <div class="div_carga">
-            <input type="hidden" value="{{empleado.id}}" name="id">
-            <label>Nombre:</label>
-            <input type="text" placeholder="Ingrese nombre" value="{{empleado.nombre}}" name="nombre">
-        </div>
+        <form class="formulario_carga" action="/admin/editar_empleado/editar" method="post">
+            <div class="div_carga">
+                <input type="hidden" value="{{empleado.id}}" name="id">
+                <label>Nombre:</label>
+                <input type="text" placeholder="Ingrese nombre" value="{{empleado.nombre}}" name="nombre">
+            </div>
 
-        <div class="div_carga">
-            <label>Apellido:</label>
-            <input type="text" placeholder="Ingrese apellido" value="{{empleado.apellido}}" name="apellido">
-        </div>
+            <div class="div_carga">
+                <label>Apellido:</label>
+                <input type="text" placeholder="Ingrese apellido" value="{{empleado.apellido}}" name="apellido">
+            </div>
 
-        <div class="div_carga">
-            <label>DNI:</label>
-            <input type="text" placeholder="Ingrese DNI" value="{{empleado.dni}}" name="dni">
-        </div>
+            <div class="div_carga">
+                <label>DNI:</label>
+                <input type="text" placeholder="Ingrese DNI" value="{{empleado.dni}}" name="dni">
+            </div>
 
-        <div class="div_carga">
-            <label>Domicilio:</label>
-            <input type="text" placeholder="Ingrese domicilio" value="{{empleado.domicilio}}" name="domicilio">
-        </div>
+            <div class="div_carga">
+                <label>Domicilio:</label>
+                <input type="text" placeholder="Ingrese domicilio" value="{{empleado.domicilio}}" name="domicilio">
+            </div>
 
-        <div class="div_carga">
-            <label>Telefono:</label>
-            <input type="text" placeholder="Ingrese telefono" value="{{empleado.telefono}}" name="telefono">
-        </div>
+            <div class="div_carga">
+                <label>Telefono:</label>
+                <input type="text" placeholder="Ingrese telefono" value="{{empleado.telefono}}" name="telefono">
+            </div>
 
-        <div class="div_carga">
-            <label>E-mail:</label>
-            <input type="text" placeholder="Ingrese E-mail" value="{{empleado.email}}" name="email">
-        </div>
+            <div class="div_carga">
+                <label>E-mail:</label>
+                <input type="text" placeholder="Ingrese E-mail" value="{{empleado.email}}" name="email">
+            </div>
 
 
-        <div class="div_carga">
-            <label>Puesto:</label>
-            <input type="text" placeholder="Ingrese puesto" value="{{empleado.puesto}}" name="puesto">
-        </div>
+            <div class="div_carga">
+                <label>Puesto:</label>
+                <input type="text" placeholder="Ingrese puesto" value="{{empleado.puesto}}" name="puesto">
+            </div>
 
-        <div class="div_carga">
-            <label>Sueldo:</label>
-            <input type="text" placeholder="Ingrese sueldo" value="{{empleado.sueldo}}" name="sueldo">
-        </div>
+            <div class="div_carga">
+                <label>Sueldo:</label>
+                <input type="text" placeholder="Ingrese sueldo" value="{{empleado.sueldo}}" name="sueldo">
+            </div>
 
-        <div>
+            <div>
 
-            <input type="submit" value="Cargar empleado" class="cargar_submit">
+                <input type="submit" value="Cargar empleado" class="cargar_submit">
 
-    </form>
+        </form>
     </div>
 
 </div>
