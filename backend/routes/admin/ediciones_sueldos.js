@@ -11,6 +11,7 @@ router.get("/", async function (req, res, next) {
   var detallesFormatID = await filtros.getId(bd);
   var detallesFormatAP=await filtros.getApellidos(bd);
   var detallesFormatNom=await filtros.getNombres(bd);
+  var detallesFormatDni=await filtros.getDni(bd);
 
 
 
@@ -19,7 +20,8 @@ router.get("/", async function (req, res, next) {
     detallesFormat,
     detallesFormatID,
     detallesFormatAP,
-    detallesFormatNom
+    detallesFormatNom,
+    detallesFormatDni
   });
 });
 
@@ -41,6 +43,55 @@ router.get("/cargar_sueldos/:id", async function (req, res, next) {
   });
 });
 
+router.post("/filter",async function(req,res,next){
+  try{
+    let obj={
+      id:req.body.id,
+      nombre:req.body.nombre,
+      apellido:req.body.apellido,
+      dni:req.body.dni
+    }
+ 
+    if(obj.id!=""){
+    var detallesFormat=await empleadosVis.getEmpleadoByIdFilter(obj.id)
+    res.render("admin/cargas/ediciones_sueldo_filter", {
+      layout: "admin/layout",
+      detallesFormat
+    }) 
+    }else if(obj.nombre!=""){
+
+    var detallesFormat=await empleadosVis.getEmpleadoByNombre(obj.nombre);
+    res.render("admin/cargas/ediciones_sueldo_filter", {
+      layout: "admin/layout",
+      detallesFormat
+    }) 
+    }else if(obj.apellido!=""){
+      var detallesFormat=await empleadosVis.getEmpleadoByApellido(obj.apellido);
+      res.render("admin/cargas/ediciones_sueldo_filter", {
+        layout: "admin/layout",
+        detallesFormat
+
+    })
+  }else if(obj.dni!=""){
+    var detallesFormat=await empleadosVis.getEmpleadoByDni(obj.dni);
+    res.render("admin/cargas/ediciones_sueldo_filter", {
+      layout: "admin/layout",
+      detallesFormat
+  })
+}else{
+  res.redirect("/admin/ediciones_sueldos");
+}
+
+  }catch (error) {
+    console.log(error);
+    throw(error);
+  }
+
+
+
+
+})
+
 router.post("/sueldo", async function (req, res, next) {
   try {
     let obj = {
@@ -61,8 +112,6 @@ router.post("/sueldo", async function (req, res, next) {
       noviembre: req.body.noviembre,
       diciembre: req.body.diciembre,
     };
-    let longitud = obj.octubre.length;
-    console.log(longitud);
     await empleadosVis.modificarEmpleadoByIdSueld2022(obj, req.body.id);
     res.redirect("/admin/ediciones_sueldos");
   } catch (error) {
@@ -77,10 +126,19 @@ router.get("/orderById", async function (req, res, next) {
   detallesFormat.sort(function (a, b) {
     return a.id - b.id;
   });
+  
+  var detallesFormatID = await filtros.getId(bd);
+  var detallesFormatAP=await filtros.getApellidos(bd);
+  var detallesFormatNom=await filtros.getNombres(bd);
+  var detallesFormatDni=await filtros.getDni(bd);
 
   res.render("admin/cargas/ediciones_sueldo", {
     layout: "admin/layout",
     detallesFormat,
+    detallesFormatID,
+    detallesFormatAP,
+    detallesFormatNom,
+    detallesFormatDni
   });
 });
 
@@ -91,9 +149,20 @@ router.get("/orderByApellido", async function (req, res, next) {
     return a.apellido > b.apellido ? 1 : a.apellido < b.apellido ? -1 : 0;
   });
 
+  var detallesFormatID = await filtros.getId(bd);
+  var detallesFormatAP=await filtros.getApellidos(bd);
+  var detallesFormatNom=await filtros.getNombres(bd);
+  var detallesFormatDni=await filtros.getDni(bd);
+
+
+
   res.render("admin/cargas/ediciones_sueldo", {
     layout: "admin/layout",
     detallesFormat,
+    detallesFormatID,
+    detallesFormatAP,
+    detallesFormatNom,
+    detallesFormatDni
   });
 });
 

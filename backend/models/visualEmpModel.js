@@ -72,5 +72,47 @@ async function getNominaMensual(){
     throw error;
   }
 }
+//METODOS PARA LOS FILTROS
 
-module.exports = { getNominaMensual, getEmpleados, getEmpleadoById, modificarEmpleadoById,eliminarEmpleadoById,getEmpleadoByIdSueld2022,modificarEmpleadoByIdSueld2022 };
+async function getEmpleadoByIdFilter(id) {
+  try {
+    var query = "select * from empleados where id = ?";
+    var rows = await pool.query(query, [id]);
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+}
+
+
+async function getEmpleadoByNombre(nombre) {
+  try {
+    var query = "select * from empleados where nombre = ?";
+    var rows = await pool.query(query, [nombre]);
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function getEmpleadoByApellido(apellido) {
+  try {
+    var query = "select * from empleados where apellido = ?";
+    var rows = await pool.query(query, [apellido]);
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function getEmpleadoByDni(dni) {
+  try {
+    var query = "select * from empleados where dni = ?";
+    var rows = await pool.query(query, [dni]);
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+}
+
+module.exports = {getEmpleadoByApellido,getEmpleadoByDni,getEmpleadoByIdFilter,getEmpleadoByNombre, getNominaMensual, getEmpleados, getEmpleadoById, modificarEmpleadoById,eliminarEmpleadoById,getEmpleadoByIdSueld2022,modificarEmpleadoByIdSueld2022 };

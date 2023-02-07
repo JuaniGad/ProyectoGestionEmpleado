@@ -29,38 +29,6 @@
       <a class="orden" href="/admin/ediciones_sueldos/orderByApellido">Ordenar
         por apellido</a>
 
-      <form class="filter" method="post" action="/admin/ediciones_sueldos/filter">
-        <label>ID:</label>
-        <select name="id">
-          <option value="">ID</option>
-          {{#each detallesFormatID}}
-            <option value={{this}} >{{this}}</option>
-          {{/each}}
-        </select>
-        <label value="">Apellido:</label>
-        <select name="apellido">
-          <option value="">APELLIDO</option>
-          {{#each detallesFormatAP}}
-            <option value={{this}}>{{this}}</option>
-          {{/each}}
-        </select>
-        <label>Nombre:</label>
-        <select name="nombre">
-          <option value="" >NOMBRE</option>
-          {{#each detallesFormatNom}}
-            <option value={{this}} >{{this}}</option>
-          {{/each}}
-        </select>
-        <label>DNI</label>
-        <select name="dni">   
-          <option value="">DNI</option>
-          {{#each detallesFormatDni}}
-            <option value={{this}}>{{this}}</option>
-          {{/each}}
-        </select>
-        <button type="submit">Buscar</button>
-      </form>
-
     <div class="edic_table">
       <table>
         <thead>
