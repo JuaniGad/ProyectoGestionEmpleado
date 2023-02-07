@@ -30,6 +30,7 @@
         por apellido</a>
 
       <form class="filter" method="post" action="/admin/ediciones_sueldos/filter">
+      <div>
         <label>ID:</label>
         <select name="id">
           <option value="">ID</option>
@@ -37,6 +38,9 @@
             <option value={{this}} >{{this}}</option>
           {{/each}}
         </select>
+        </div>
+
+        <div>
         <label value="">Apellido:</label>
         <select name="apellido">
           <option value="">APELLIDO</option>
@@ -44,6 +48,9 @@
             <option value={{this}}>{{this}}</option>
           {{/each}}
         </select>
+        </div>
+
+        <div>
         <label>Nombre:</label>
         <select name="nombre">
           <option value="" >NOMBRE</option>
@@ -51,6 +58,8 @@
             <option value={{this}} >{{this}}</option>
           {{/each}}
         </select>
+        </div>
+        <div>
         <label>DNI</label>
         <select name="dni">   
           <option value="">DNI</option>
@@ -58,6 +67,7 @@
             <option value={{this}}>{{this}}</option>
           {{/each}}
         </select>
+        </div>
         <button type="submit">Buscar</button>
       </form>
 

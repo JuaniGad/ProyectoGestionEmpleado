@@ -61,12 +61,20 @@ router.post("/filter",async function(req,res,next){
     }else if(obj.nombre!=""){
 
     var detallesFormat=await empleadosVis.getEmpleadoByNombre(obj.nombre);
+    detallesFormat.sort(function (a, b) {
+      return a.apellido > b.apellido  ? 1 : a.apellido< b.apellido ? -1 : 0;
+    });
+
     res.render("admin/cargas/ediciones_sueldo_filter", {
       layout: "admin/layout",
       detallesFormat
     }) 
     }else if(obj.apellido!=""){
       var detallesFormat=await empleadosVis.getEmpleadoByApellido(obj.apellido);
+      detallesFormat.sort(function (a, b) {
+        return a.nombre > b.nombre  ? 1 : a.nombre< b.nombre ? -1 : 0;
+      });
+
       res.render("admin/cargas/ediciones_sueldo_filter", {
         layout: "admin/layout",
         detallesFormat
