@@ -249,3 +249,7 @@ select{
 option{
   font-size: 15px;
 }
+.buscar{
+  max-width: 30%;
+  display: inline-block;
+}
