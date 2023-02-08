@@ -74,9 +74,9 @@ async function getNominaMensual(){
 }
 //METODOS PARA LOS FILTROS
 
-async function getEmpleadoByIdFilter(id) {
+async function getEmpleadoByIdFilter(id,bd) {
   try {
-    var query = "select * from empleados where id = ?";
+    var query = "select * from "+bd+" where id = ?";
     var rows = await pool.query(query, [id]);
     return rows;
   } catch (error) {
@@ -85,9 +85,9 @@ async function getEmpleadoByIdFilter(id) {
 }
 
 
-async function getEmpleadoByNombre(nombre) {
+async function getEmpleadoByNombre(nombre,bd) {
   try {
-    var query = "select * from empleados where nombre = ?";
+    var query = "select * from "+bd+" where nombre = ?";
     var rows = await pool.query(query, [nombre]);
     return rows;
   } catch (error) {
@@ -95,9 +95,9 @@ async function getEmpleadoByNombre(nombre) {
   }
 }
 
-async function getEmpleadoByApellido(apellido) {
+async function getEmpleadoByApellido(apellido,bd) {
   try {
-    var query = "select * from empleados where apellido = ?";
+    var query = "select * from "+bd+" where apellido = ?";
     var rows = await pool.query(query, [apellido]);
     return rows;
   } catch (error) {
@@ -105,9 +105,9 @@ async function getEmpleadoByApellido(apellido) {
   }
 }
 
-async function getEmpleadoByDni(dni) {
+async function getEmpleadoByDni(dni,bd) {
   try {
-    var query = "select * from empleados where dni = ?";
+    var query = "select * from "+bd+" where dni = ?";
     var rows = await pool.query(query, [dni]);
     return rows;
   } catch (error) {
