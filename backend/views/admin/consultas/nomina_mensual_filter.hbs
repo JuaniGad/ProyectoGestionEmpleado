@@ -14,59 +14,13 @@
       <ul>
         <li><a href="/admin/consultas/nomina_empleados">Nomina de empleados</a></li>
         <li><a href="/admin/consultas/nomina_mensual" class="active">Nomina mensual de sueldos</a></li>
-        <li><a href="/admin/consultas/detalle">Detalle de empleado</a></li>
+        <li><a href="/admin/consultas/detalle" >Detalle de empleado</a></li>
       </ul>
     </nav>
   </div>
   <div class="main">
     <h1>Nomina mensual de cobros</h1>
     <div class="edic_table">
-      <a class="orden" href="/admin/consultas/nomina_mensual/orderById">Ordenar por id</a>
-      <a class="orden" href="/admin/consultas/nomina_mensual/orderByApellido">Ordenar
-        por apellido</a>
-
-              <form class="filter" method="post" action="/admin/consultas/nomina_mensual/filter">
-      <div>
-        <label>ID:</label>
-        <select name="id">
-          <option value="">ID</option>
-          {{#each detallesFormatID}}
-            <option value={{this}} >{{this}}</option>
-          {{/each}}
-        </select>
-        </div>
-
-        <div>
-        <label value="">Apellido:</label>
-        <select name="apellido">
-          <option value="">APELLIDO</option>
-          {{#each detallesFormatAP}}
-            <option value={{this}}>{{this}}</option>
-          {{/each}}
-        </select>
-        </div>
-
-        <div>
-        <label>Nombre:</label>
-        <select name="nombre">
-          <option value="" >NOMBRE</option>
-          {{#each detallesFormatNom}}
-            <option value={{this}} >{{this}}</option>
-          {{/each}}
-        </select>
-        </div>
-        <div>
-        <label>DNI</label>
-        <select name="dni">   
-          <option value="">DNI</option>
-          {{#each detallesFormatDni}}
-            <option value={{this}}>{{this}}</option>
-          {{/each}}
-        </select>
-        </div>
-        <button type="submit" class="buscar">Buscar</button>
-      </form>
-
       <table>
         <thead>
           <tr>

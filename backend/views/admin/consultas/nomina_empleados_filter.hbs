@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="first_nav">
+
+    <nav class="nav_class">
+      <ul>
+        <li><a href="/admin/home">Home</a></li>
+        <li><a href="/admin/cargas">Cargas de Datos</a></li>
+        <li><a href="/admin/consultas" class="active">Consultas</a></li>
+
+      </ul>
+    </nav>
+
+    <nav class="nav_class">
+      <ul>
+        <li><a href="/admin/consultas/nomina_empleados" class="active">Nomina de empleados</a></li>
+        <li><a href="/admin/consultas/nomina_mensual">Nomina mensual de sueldos</a></li>
+        <li><a href="/admin/consultas/detalle" >Detalle de
+ empleado</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="main">
+    <h1>Nomina de empleados</h1>
+    <div class="edic_table">
+      <table>
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Apellido</td>
+            <td>DNI</td>
+            <td>Domicilio</td>
+            <td>Sueldo</td>
+            <td>Puesto</td>
+            <td>Telefono</td>
+            <td>E-mail</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          {{#each detallesFormat}}
+            <tr>
+              <td>{{id}}</td>
+              <td>{{nombre}}</td>
+              <td>{{apellido}}</td>
+              <td>{{dni}}</td>
+              <td>{{domicilio}}</td>
+              <td>{{sueldo}}</td>
+              <td>{{puesto}}</td>
+              <td>{{telefono}}</td>
+              <td>{{email}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>
