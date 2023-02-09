@@ -53,14 +53,14 @@ router.post("/filter",async function(req,res,next){
     }
  
     if(obj.id!=""){
-    var detallesFormat=await empleadosVis.getEmpleadoByIdFilter(obj.id)
+    var detallesFormat=await empleadosVis.getEmpleadoByIdFilter(obj.id,bd)
     res.render("admin/cargas/ediciones_sueldo_filter", {
       layout: "admin/layout",
       detallesFormat
     }) 
     }else if(obj.nombre!=""){
 
-    var detallesFormat=await empleadosVis.getEmpleadoByNombre(obj.nombre);
+    var detallesFormat=await empleadosVis.getEmpleadoByNombre(obj.nombre,bd);
     detallesFormat.sort(function (a, b) {
       return a.apellido > b.apellido  ? 1 : a.apellido< b.apellido ? -1 : 0;
     });
@@ -70,7 +70,7 @@ router.post("/filter",async function(req,res,next){
       detallesFormat
     }) 
     }else if(obj.apellido!=""){
-      var detallesFormat=await empleadosVis.getEmpleadoByApellido(obj.apellido);
+      var detallesFormat=await empleadosVis.getEmpleadoByApellido(obj.apellido,bd);
       detallesFormat.sort(function (a, b) {
         return a.nombre > b.nombre  ? 1 : a.nombre< b.nombre ? -1 : 0;
       });
@@ -81,7 +81,7 @@ router.post("/filter",async function(req,res,next){
 
     })
   }else if(obj.dni!=""){
-    var detallesFormat=await empleadosVis.getEmpleadoByDni(obj.dni);
+    var detallesFormat=await empleadosVis.getEmpleadoByDni(obj.dni,bd);
     res.render("admin/cargas/ediciones_sueldo_filter", {
       layout: "admin/layout",
       detallesFormat
@@ -94,9 +94,6 @@ router.post("/filter",async function(req,res,next){
     console.log(error);
     throw(error);
   }
-
-
-
 
 })
 
