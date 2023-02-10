@@ -50,17 +50,25 @@ router.get("/nomina_empleados", async function (req, res, next) {
 
 //CONSULTA INDIVIDUAL
 router.get("/detalle", async function (req, res, next) {
+
+
   res.render("admin/consultas/detalle", {
     layout: "admin/layout",
   });
 });
 
 router.post("/detalle/individual", async function (req, res, next) {
+
   try {
     let id = req.body.id;
 
-    let empleadoInfo = await visualNom.getEmpleadoById(id);
-    console.log(empleadoInfo);
+    let empleadoInfo = await visualNom.getEmpleadoByIdFilter(id,"empleados");
+    
+    if(empleadoInfo=[""]){
+      let nuevaBusqueda=await visualNom.getEmpleadoByIdFilter(id,"sueldos2022"); 
+
+      empleadoInfo=nuevaBusqueda
+    }
 
     let empleadoSueldos = await visualNom.getEmpleadoByIdSueld2022(id);
     console.log(empleadoSueldos);
@@ -77,8 +85,7 @@ router.post("/detalle/individual", async function (req, res, next) {
 });
 
 //ORDEN VISUALIZACION NOMINA DE EMPLEADOS
-router.get(
-  "/nomina_empleados/orderByApellido",
+router.get( "/nomina_empleados/orderByApellido",
   async function (req, res, next) {
     var detallesFormat = await visualNom.getEmpleados();
 

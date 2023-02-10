@@ -27,7 +27,7 @@
       <input type="submit" value="Buscar" class="cargar_submit" />
   </div>
   </form>
-
+  <div class="edic_table">
   <table>
 
     <h2>Informacion del empleado</h2>
@@ -46,23 +46,25 @@
     </thead>
 
     <tbody>
-
+      {{#each empleadoInfo}}
       <tr>
-        <td>{{empleadoInfo.id}}</td>
-        <td>{{empleadoInfo.nombre}}</td>
-        <td>{{empleadoInfo.apellido}}</td>
-        <td>{{empleadoInfo.dni}}</td>
-        <td>{{empleadoInfo.domicilio}}</td>
-        <td>{{empleadoInfo.sueldo}}</td>
-        <td>{{empleadoInfo.puesto}}</td>
-        <td>{{empleadoInfo.telefono}}</td>
-        <td>{{empleadoInfo.email}}</td>
+        <td>{{id}}</td>
+        <td>{{nombre}}</td>
+        <td>{{apellido}}</td>
+        <td>{{dni}}</td>
+        <td>{{domicilio}}</td>
+        <td>{{sueldo}}</td>
+        <td>{{puesto}}</td>
+        <td>{{telefono}}</td>
+        <td>{{email}}</td>
       </tr>
-
+      {{/each}}
     </tbody>
 
   </table>
+  </div>
   <h2>Cobros mensuales del empleado</h2>
+
   <div class="edic_table">
     <table>
       <thead>
