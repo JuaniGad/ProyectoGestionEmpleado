@@ -1,23 +1,22 @@
 <div class="container">
-    <div class="first_nav">
-
-        <nav class="nav_class">
-            <ul>
-                <li><a href="/admin/home">Home</a></li>
-                <li><a href="/admin/cargas">Cargas de Datos</a></li>
-                <li><a href="/admin/consultas" class="active">Consultas</a></li>
-
-            </ul>
-        </nav>
-
-        <nav class="nav_class">
-            <ul>
-                <li><a href="/admin/consultas/nomina_empleados">Nomina de empleados</a></li>
-                <li><a href="/admin/consultas/nomina_mensual">Nomina mensual de sueldos</a></li>
-                <li><a href="/admin/consultas/detalle" class="active">Detalle de empleado</a></li>
-            </ul>
-        </nav>
-    </div>
+      <nav class="navbar">
+        <div class="brand-title">Gyro</div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+      <div class="navbar-links">
+      <ul>
+            <li><a href="/admin/consultas/nomina_empleados">Nomina de empleados</a></li>
+            <li><a href="/admin/consultas/nomina_mensual">Nomina mensual de sueldos</a></li>
+            <li><a href="/admin/consultas/detalle" id="active">Detalle de empleado</a></li>
+        <li><a href="/admin/consultas" >Consultas</a></li>
+        <li><a href="/admin/home">Home</a></li>
+      </ul>
+      </div>
+      
+      </nav>
     <div class="main">
         <form class="formulario_carga" method="post" action="/admin/consultas/detalle/individual">
             <div class="div_carga">

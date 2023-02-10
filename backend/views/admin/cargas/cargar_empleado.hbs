@@ -1,22 +1,22 @@
 <div class="container">
-  <div class="first_nav">
 
-    <nav class="nav_class">
+      <nav class="navbar">
+        <div class="brand-title">Gyro</div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+      <div class="navbar-links">
       <ul>
+        <li><a href="/admin/ediciones_sueldos">Ediciones</a></li>
+        <li><a href="/admin/cargar_empleado" id="active">Cargar empleado</a></li>
+        <li><a href="/admin/cargas" >Cargas de datos</a></li>
         <li><a href="/admin/home">Home</a></li>
-        <li><a href="/admin/cargas" class="active">Cargas de Datos</a></li>
-        <li><a href="/admin/consultas">Consultas</a></li>
-
       </ul>
-    </nav>
-
-    <nav class="nav_class">
-      <ul>
-        <li><a href="/admin/cargar_empleado" class="active">Cargar empleado</a></li>
-        <li><a href="/admin/ediciones_sueldos" >Ediciones</a></li>
-      </ul>
-    </nav>
-  </div>
+      </div>
+      
+      </nav>
 
     {{#if carga}}
     <h2>{{message}}</h2>
@@ -73,6 +73,5 @@
     {{#if error}}
     <h5>{{message}}</h5>
     {{/if}}
-
 
 </div>
