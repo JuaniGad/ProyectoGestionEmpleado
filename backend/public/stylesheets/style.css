@@ -105,6 +105,16 @@ span.psw {
   font-size: 1.5rem;
   margin: .5rem;
 }
+.brand-title a{
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.brand-title div{
+  display: inline;  
+}
 
 .navbar-links {
   height: 100%;
