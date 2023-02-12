@@ -27,7 +27,7 @@ router.post('/', async (req,res,next)=>{
     res.render('admin/cargas/cargar_empleado',{
       layout:'admin/layout',
       error:true,
-      message:"Todos los campos son requeridos"
+      message:"Todos los campos son requeridos, revise los tipos de dato ingresado"
     });
   }
 
@@ -35,7 +35,7 @@ router.post('/', async (req,res,next)=>{
     console.log(error)
     res.render('admin/cargas/cargar_empleado',{
       layout:'admin/layout',
-      error:true, message:'No se cargo el empleado'
+      error:true, message:'No se cargo el empleado, revise el tipo de dato ingresado'
     })
   }
 })
