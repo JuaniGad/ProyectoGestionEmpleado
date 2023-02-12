@@ -186,13 +186,13 @@ router.post("/nomina_empleados/filter", async function (req, res, next) {
     };
 
     if (obj.id != "") {
-      var detallesFormat = await visualNom.getEmpleadoByIdFilter(obj.id);
+      var detallesFormat = await visualNom.getEmpleadoByIdFilter(obj.id,bd);
       res.render("admin/consultas/nomina_empleados_filter", {
         layout: "admin/layout",
         detallesFormat,
       });
     } else if (obj.nombre != "") {
-      var detallesFormat = await visualNom.getEmpleadoByNombre(obj.nombre);
+      var detallesFormat = await visualNom.getEmpleadoByNombre(obj.nombre,bd);
       detallesFormat.sort(function (a, b) {
         return a.apellido > b.apellido ? 1 : a.apellido < b.apellido ? -1 : 0;
       });
@@ -202,7 +202,7 @@ router.post("/nomina_empleados/filter", async function (req, res, next) {
         detallesFormat,
       });
     } else if (obj.apellido != "") {
-      var detallesFormat = await visualNom.getEmpleadoByApellido(obj.apellido);
+      var detallesFormat = await visualNom.getEmpleadoByApellido(obj.apellido,bd);
       detallesFormat.sort(function (a, b) {
         return a.nombre > b.nombre ? 1 : a.nombre < b.nombre ? -1 : 0;
       });
@@ -212,7 +212,7 @@ router.post("/nomina_empleados/filter", async function (req, res, next) {
         detallesFormat,
       });
     } else if (obj.dni != "") {
-      var detallesFormat = await visualNom.getEmpleadoByDni(obj.dni);
+      var detallesFormat = await visualNom.getEmpleadoByDni(obj.dni,bd);
       res.render("admin/consultas/nomina_empleados_filter", {
         layout: "admin/layout",
         detallesFormat,
